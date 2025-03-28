@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #B75DFC;
+    --primary-hover: #cf86ff;
+    --text-color: #333;
+    --light-text: #666;
+    --background-light: #fdf3f7;
+    --border-color: #ddd;
+    --footer-bg: #e0b8ff;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:#fdf3f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Botones */
+.btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+/* ==========================
+   ESTILOS GENERALES
+========================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf3f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #222;
+    margin-bottom: 10px;
+    text-align: center;
+}
+h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+h1 span {
+    font-size: 26px;
+}
+
+/* ==========================
+   SECCIÓN DEL FORMULARIO
+========================== */
+.form-section {
+    background: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: none;
+    padding: 10px 0;
+}
+
+/* ==========================
+   ESTILOS DE INPUTS Y LABELS
+========================== */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    border-color: #b37fd3;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+input[type="file"] {
+    border: none;
+    padding: 5px;
+}
+
+/* ==========================
+   BOTONES
+========================== */
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-limpiar {
+    background: transparent;
+    border: 2px solid #d8b3ff;
+    color: #d8b3ff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-limpiar:hover {
+    background: #d8b3ff;
+    color: #fff;
+}
+
+.btn-enviar {
+    background: #d8b3ff;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-enviar:hover {
+    background: #b37fd3;
+}
+
+
+
+/* ==========================
+   IMAGEN CENTRAL (GATICUEVA)
+========================== */
+.gaticueva {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gaticueva img {
+    width: 800px;
+    height: auto;
+}
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #d8a4f2; /* Borde morado */
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #555;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload label {
+    background: #d8a4f2; /* Morado suave */
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.file-upload label:hover {
+    background: #c28ae2; /* Morado más oscuro al pasar el mouse */
+}
+
+.file-upload span {
+    font-size: 14px;
+    color: #777;
+    flex-grow: 1; /* Para que ocupe todo el espacio disponible */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

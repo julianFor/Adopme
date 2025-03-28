@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Adopción - AdoptMe</title>
+    <link rel="stylesheet" href="../css/formulario2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="AdoptMe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="adopcion.html">Adoptar</a></li>
+                <li><a href="comoadoptar.html">¿Cómo Adoptar?</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="btn">Iniciar Sesión</button>
+    </header>
+
+    <section class="form-section">
+        <h1>🐾 <span>Formulario de Publicacion De Mascota</span> 🐾</h1>
+        <p class="subtitulo">🐾 Comparte la historia de mascota y ayudala a encontrar un hogar amoroso 💕</p>
+
+        <h2>📌 Información del Publicador</h2>
+        <form action="procesar_publicacion.php" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+    
+                <label for="cedula">Cédula de ciudadanía</label>
+                <input type="text" id="cedula" name="cedula" placeholder="Tu Cédula" required>
+    
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@email.com" required>
+    
+                <label for="telefono">Teléfono de contacto</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono de contacto" required>
+    
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Tu Ciudad" required>
+    
+                <label for="barrio">Barrio/Localidad</label>
+                <input type="text" id="barrio" name="barrio" placeholder="Tu Barrio/Localidad" required>
+    
+                <label for="direccion">Dirección de residencia</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Tu Dirección de residencia" required>
+            </fieldset>
+    
+            <h2>📎 Adjuntar Documento de Identidad</h2>
+<p>(Para validar identidad y evitar fraudes)</p>
+
+<div class="file-upload">
+    <label for="doc_identidad_1">Elegir Archivo</label>
+    <input type="file" id="doc_identidad_1" name="doc_identidad_1" accept=".jpg, .jpeg, .png, .pdf" onchange="mostrarNombre(this, 'file-name-1')">
+    <span id="file-name-1">No se ha seleccionado ningún archivo</span>
+</div>
+
+<div class="file-upload">
+    <label for="doc_identidad_2">Elegir Archivo</label>
+    <input type="file" id="doc_identidad_2" name="doc_identidad_2" accept=".jpg, .jpeg, .png, .pdf" onchange="mostrarNombre(this, 'file-name-2')">
+    <span id="file-name-2">No se ha seleccionado ningún archivo</span>
+</div>
+    
+<h2>📌 Información de la Mascota</h2>
+
+<label for="nombre_mascota">Nombre de la mascota:</label>
+<input type="text" id="nombre_mascota" name="nombre_mascota" placeholder="Nombre de la mascota">
+
+<label for="especie">Especie:</label>
+<select id="especie" name="especie">
+    <option value="">Seleccionar</option>
+    <option value="perro">Perro</option>
+    <option value="gato">Gato</option>
+    <option value="otro">Otro</option>
+</select>
+
+<label for="raza">Raza:</label>
+<select id="raza" name="raza">
+    <option value="">Seleccionar</option>
+</select>
+
+<label for="edad">Edad aproximada:</label>
+<input type="text" id="edad" name="edad" placeholder="Edad aproximada">
+
+<label for="tamano">Tamaño:</label>
+<select id="tamano" name="tamano">
+    <option value="">Seleccionar</option>
+    <option value="pequeno">Pequeño</option>
+    <option value="mediano">Mediano</option>
+    <option value="grande">Grande</option>
+</select>
+
+<label for="estado_salud">Estado de salud:</label>
+<select id="estado_salud" name="estado_salud">
+    <option value="">Seleccionar</option>
+    <option value="saludable">Saludable</option>
+    <option value="requiere_cuidados">Requiere Cuidados</option>
+    <option value="otro">Otro</option>
+</select>
+
+<label for="personalidad">Personalidad y comportamiento:</label>
+<textarea id="personalidad" name="personalidad" placeholder="Escribe tu respuesta"></textarea>
+
+<label for="historia">Historia de la mascota:</label>
+<textarea id="historia" name="historia" placeholder="Escribe tu respuesta"></textarea>
+
+<!-- 📷 Carga de Fotos -->
+<label for="fotos_mascota">📎 Adjuntar mínimo 3 fotos de la mascota (Buena iluminación y ángulos distintos)</label>
+<div class="file-upload">
+    <input type="file" id="fotos_mascota" name="fotos_mascota[]" multiple accept="image/*">
+    <label for="fotos_mascota">Elegir Archivo</label>
+    <span id="file-name-fotos">No se ha seleccionado ningún archivo</span>
+</div>
+
+<!-- 🎥 Carga de Video -->
+<label for="video_mascota">📎 Opcional: Adjuntar video corto de la mascota (Mostrando su personalidad y estado actual)</label>
+<div class="file-upload">
+    <input type="file" id="video_mascota" name="video_mascota" accept="video/*">
+    <label for="video_mascota">Elegir Archivo</label>
+    <span id="file-name-video">No se ha seleccionado ningún archivo</span>
+</div>
+
+<div class="gaticueva">
+    <img src="../img/Gaticueva3.png" alt="Imagen central">
+</div>
+
+    
+            <h2>📌 Confirmaciones y Condiciones</h2>
+    
+            <label for="condiciones">¿Estás de acuerdo con estas condiciones?</label>
+            <select id="condiciones" name="condiciones">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+    
+            <label for="requisito_adoptante">¿Tienes algún requisito especial para el adoptante?</label>
+            <select id="requisito_adoptante" name="requisito_adoptante">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+    
+            <label for="visita_validacion">¿Estás dispuesto/a a hacer una visita o videollamada para validar el hogar del adoptante?</label>
+            <select id="visita_validacion" name="visita_validacion">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+    
+            <label for="verificacion_adoptme">¿Estás de acuerdo en que AdoptMe haga un proceso de verificación antes de publicar la mascota?</label>
+            <select id="verificacion_adoptme" name="verificacion_adoptme">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+    
+            <h2>📌 Confirmación Final</h2>
+    
+            <label class="checkbox-label">
+                <input type="checkbox" name="confirmacion_veracidad" required>
+                Declaro que toda la información proporcionada es verdadera y que soy el responsable legítimo de esta mascota.
+            </label>
+    
+            <label class="checkbox-label">
+                <input type="checkbox" name="confirmacion_pago" required>
+                Me comprometo a no solicitar ningún pago o beneficio económico por la adopción de esta mascota.
+            </label>
+    
+            <label class="checkbox-label">
+                <input type="checkbox" name="confirmacion_verificacion" required>
+                Acepto que AdoptMe realice un proceso de verificación antes de publicar la mascota.
+            </label>
+    
+            <div class="botones">
+                <button type="reset" class="btn-limpiar">Limpiar</button>
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+        </form>
+    </section>
+    <div class="gaticueva">
+        <img src="../img/Gaticueva2.png" alt="Imagen central">
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="about">
+                <h3>AdoptMe</h3>
+                <p>En AdoptMe, conectamos corazones con patas. Facilitamos adopciones seguras y responsables para que encuentres un hogar lleno de amor.</p>
+                <p>📧 andhasrgn@gmail.com</p>
+                <p>📞 +4938772416</p>
+                <div class="social-icons">
+                    <a href="#"><img src="../img/FacebookLogo.png" alt="Facebook"></a>
+                    <a href="#"><img src="../img/InstagramLogo.png" alt="Instagram"></a>
+                    <a href="#"><img src="../img/LinkedinLogo.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+    
+            <div class="footer-image">
+                <img src="../img/footer.png" alt="Imagen central">
+            </div>
+    
+            <div class="menu">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="adopcion.html">Adopta</a></li>
+                    <li><a href="comoadoptar.html">¿Cómo Adoptar?</a></li>
+                    <li><a href="donar.html">Donar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">© 2025 AdoptMe. Todos los derechos reservados. Adoptar es amar.</p>
+    </footer>
+
+</body>
+<script>
+    function mostrarNombre(input, spanId) {
+        const span = document.getElementById(spanId);
+        span.textContent = input.files.length > 0 ? input.files[0].name : "No se ha seleccionado ningún archivo";
+    }
+    document.getElementById("fotos_mascota").addEventListener("change", function () {
+    let fileName = this.files.length > 0 ? this.files.length + " archivos seleccionados" : "No se ha seleccionado ningún archivo";
+    document.getElementById("file-name-fotos").textContent = fileName;
+});
+
+document.getElementById("video_mascota").addEventListener("change", function () {
+    let fileName = this.files.length > 0 ? this.files[0].name : "No se ha seleccionado ningún archivo";
+    document.getElementById("file-name-video").textContent = fileName;
+});
+
+</script>
+</html>
