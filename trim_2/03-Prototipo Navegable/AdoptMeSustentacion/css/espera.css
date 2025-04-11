@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #cf86ff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #cf86ff;
+}
+
+.container {
+  max-width: 1150px;
+  margin-top: 20px;
+  margin-left: 250px;
+  margin-bottom: 100px;
+  padding: 60px 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(183, 93, 252, 0.2);
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.step {
+  text-align: center;
+  flex: 1 1 150px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #f1e4fd;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.step img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.step:hover {
+  transform: scale(1.05);
+  background-color: #e6d1fb;
+}
+
+.line {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #4CAF50 0%, #4CAF50 20%, #ddd 20%, #ddd 100%);
+  margin: 40px 0 20px;
+  position: relative;
+  border-radius: 4px;
+}
+
+
+.dot {
+  width: 22px;
+  height: 22px;
+  background-color: #cf86ff;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #cf86ff;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+}
+
+.dot:nth-child(1) { left: 0%; }
+.dot:nth-child(2) { left: 20%; }
+.dot:nth-child(3) { left: 40%; }
+.dot:nth-child(4) { left: 60%; }
+.dot:nth-child(5) { left: 80%; }
+.dot:nth-child(6) { left: 100%; }
+
+/* ESTADOS DE LOS PASOS */
+.step.completed {
+  background-color: #d0ffe2;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+  opacity: 1;
+  filter: none;
+}
+
+.step.active {
+  background-color: #fff3cc;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+  transform: scale(1.05);
+  border: 2px solid #ffca28;
+}
+
+.step.pending {
+  background-color: #f1e4fd;
+  opacity: 0.5;
+  filter: grayscale(70%);
+}
+
+/* ESTADOS DE LOS PUNTOS EN LA LÍNEA */
+.dot.completed-dot {
+  background-color: #4CAF50;
+  box-shadow: 0 0 0 3px #4CAF50;
+}
+
+.dot.active-dot {
+  background-color: #cf86ff;
+  opacity: 0.5;
+  box-shadow: 0 0 0 3px #cf86ff;
+}
+.dot:nth-child(2) {
+  background-color: #fcd84c; /* amarillo */
+  box-shadow: 0 0 0 3px #fcd84c;
+}
+
+.dot.pending-dot {
+  background-color: #cf86ff;
+  opacity: 0.5;
+  box-shadow: 0 0 0 3px #cf86ff;
+}
+
+footer {
+  background-color: #cf86ff;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.footer-content h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+}
+
+.footer-image img {
+  max-width: 150px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 8px 0;
+}
+
+.menu ul li a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #f3e5ff;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.back-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-volver {
+  background-color: #cf86ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+  background-color: #b261e3;
+}
