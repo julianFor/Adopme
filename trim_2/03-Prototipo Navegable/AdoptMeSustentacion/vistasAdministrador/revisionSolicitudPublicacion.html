@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revisión de Solicitud</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/entregables.css">
+  <link rel="icon" href="/img/IconoMorado.png" type="image/png">
+
+
+
+
+  <style>
+    .padre {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 900px;
+      width: 100%;
+
+    }
+    h2 {
+      color: #B75DFC;
+    }
+    h3 {
+      margin-top: 20px;
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .photos img {
+      margin: 5px;
+      border-radius: 8px;
+    }
+    .actions {
+      margin-top: 30px;
+    }
+    .actions button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+    .approve {
+      background-color: #63D471;
+    }
+    .reject {
+      background-color: #FC636B;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/img/logo.png" alt="AdoptMe Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/vistasAdministrador/indexAdministrador.html">Inicio</a></li>
+            <li><a href="/vistaAdoptante/adopcionAdoptante.html">Adoptar</a></li>
+            <li><a href="/vistaAdoptante/comoadoptarAdoptante.html">¿Cómo Adoptar?</a></li>
+            <li><a href="/vistaAdoptante/donarAdoptante.html">Donar</a></li>
+            <li><a href="/vistasAdministrador/gestionAdministrador.html">Gestion</a></li>
+        </ul>
+    </nav>
+    <div>
+        <button class="btn" onclick="abrirModal('loginModal')"><ion-icon name="person"></ion-icon></button>
+    </div>
+</header>
+
+
+
+<div class="wrapper">
+  <div class="sidebar">
+      <h2 id="tituloEntregable">gestionar</h2>
+      <ul>
+          <li><a href="/vistasAdministrador/gestionUsuarios.html"><i class="fas fa-home"></i>Gestion Usuarios</a></li>
+          <li><a href="/vistasAdministrador/gestionMascotas.html"><i class="fas fa-user"></i>Gestion Mascotas</a></li>
+          <li><a href="/vistasAdministrador/gestionSolicitudes.html"><i class="fas fa-address-card"></i>Gestion Solicitudes</a></li>
+          <li><a href="/vistasAdministrador/ReporteMascotas.html"><i class="fas fa-user"></i>Mascotas Disponibles</a></li>
+          <li><a href="/vistasAdministrador/ReporteSolicitudes.html"><i class="fas fa-user"></i>Reporte Solicitudes</a></li>
+          <li><a href="/vistasAdministrador/ReporteAdopciones.html"><i class="fas fa-user"></i>Reportes Adopciones</a></li>
+      </ul> 
+  </div>   
+</div>
+      <div class="padre">
+
+          <div class="container">
+            <h2>🐾 Revisión de Solicitud de Publicación de Mascota</h2>
+            <p><strong>Fecha de envío:</strong> 08/04/2025</p>
+        
+            <h3>📌 Información del Publicador</h3>
+            <ul>
+              <li><strong>Nombre:</strong> Tilin Insano</li>
+              <li><strong>Cédula:</strong> 123456789</li>
+              <li><strong>Correo:</strong> Tilininsano001@mail.com</li>
+              <li><strong>Teléfono:</strong> 3204567890</li>
+              <li><strong>Ciudad:</strong> Bogotá</li>
+              <li><strong>Barrio/Localidad:</strong> Suba</li>
+              <li><strong>Dirección:</strong> Calle 123 #45-67</li>
+              <li><strong>Documento de Identidad:</strong> <a href="#">ver_doc.pdf</a></li>
+            </ul>
+        
+            <h3>📌 Información de la Mascota</h3>
+            <ul>
+              <li><strong>Nombre:</strong> Max</li>
+              <li><strong>Especie:</strong> Perro</li>
+              <li><strong>Raza:</strong> Criollo</li>
+              <li><strong>Edad aproximada:</strong> 3 años</li>
+              <li><strong>Tamaño:</strong> Mediano</li>
+              <li><strong>Estado de salud:</strong> Bueno</li>
+              <li><strong>Personalidad y comportamiento:</strong> Juguetón, obediente y muy cariñoso</li>
+              <li><strong>Historia:</strong> Fue rescatado de la calle, ahora busca un hogar donde lo amen</li>
+              <li class="photos"><strong>Fotos:</strong><br>
+                <img src="https://i.pinimg.com/originals/6d/cd/10/6dcd104614e998053b2dd5da4f7e7358.jpg" width="100">
+                <img src="https://i.pinimg.com/originals/a1/e6/98/a1e69856e017ebb3a50c4196104d313f.png" width="100">
+                <img src="https://live.staticflickr.com/65535/53624812282_5bc44a37cd_b.jpg" width="100">
+              </li>
+              <li><strong>Video:</strong> <a href="#">ver_video.mp4</a></li>
+            </ul>
+        
+            <h3>📄 Confirmaciones y Condiciones</h3>
+            <ul>
+              <li>✅ Acepta condiciones generales</li>
+              <li>✅ No solicita pagos por adopción</li>
+              <li>✅ Dispuesto a videollamada o visita</li>
+              <li>✅ Confirmación final aceptada</li>
+            </ul>
+        
+            <div class="actions">
+                <a href="/vistasAdministrador/gestionSolicitudes.html"><button class="approve">✅ Aprobar publicación</button></a>
+                <a href="/vistasAdministrador/gestionSolicitudes.html"><button class="reject">❌ Rechazar solicitud</button></a>
+              
+              
+            </div>
+          </div>
+      </div>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

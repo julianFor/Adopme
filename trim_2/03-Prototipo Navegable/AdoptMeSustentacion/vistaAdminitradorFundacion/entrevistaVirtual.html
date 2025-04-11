@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguimiento de Adopción</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/espera.css">
+  <link rel="stylesheet" href="/css/entregables.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/IconoMorado.png" type="image/png">
+
+
+
+  <style>
+    .padre {
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #B75DFC;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .linea-progreso {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .linea-progreso::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #dcd1f9;
+      z-index: 0;
+    }
+
+    .etapa {
+      background-color: #f1eefb;
+      border-radius: 15px;
+      padding: 20px;
+      width: 140px;
+      z-index: 1;
+      color: #888;
+    }
+
+    .etapa.completada {
+      background-color: #c6f8d6;
+      color: #000;
+    }
+
+    .etapa.actual {
+      background-color: #fff8d6;
+      border: 2px solid #fdd835;
+      color: #000;
+    }
+
+    .icono {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .acciones {
+      margin-top: 40px;
+    }
+
+    .acciones label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .acciones input[type="text"],
+    .acciones input[type="date"],
+    .acciones input[type="time"] {
+      padding: 10px;
+      width: 300px;
+      max-width: 90%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .acciones button {
+      background-color: #B75DFC;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/logo.png" alt="AdoptMe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/vistaAdminitradorFundacion/indexAdministradorFundacion.html">Inicio</a></li>
+                <li><a href="/vistaAdoptante/adopcionAdoptante.html">Adoptar</a></li>
+                <li><a href="/vistaAdoptante/comoadoptarAdoptante.html">¿Cómo Adoptar?</a></li>
+                <li><a href="/vistaAdoptante/donarAdoptante.html">Donar</a></li>
+                <li><a href="/vistaAdminitradorFundacion/gestionAdministradorFundacion.html">Gestion</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button class="btn" onclick="abrirModal('loginModal')"><ion-icon name="person"></ion-icon></button>
+        </div>
+    </header>
+
+
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2 id="tituloEntregable">gestionar</h2>
+            <ul>
+                <li><a href="/vistaAdminitradorFundacion/gestionMascotasFundacion.html"><i class="fas fa-user"></i>Gestion Mascotas</a></li>
+                <li><a href="/vistaAdminitradorFundacion/gestionSolicitudesFundacion.html"><i class="fas fa-address-card"></i>Gestion Solicitudes</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Seguimientos Adopcion</a></li>
+            </ul> 
+        </div>   
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <main class="container">
+        <h2>Tu progreso</h2>
+    
+        <div class="line">
+          <div class="dot completed-dot"></div>
+          <div class="dot completed-dot"></div>
+          <div class="dot active-dot"></div>
+          <div class="dot pending-dot"></div>
+          <div class="dot pending-dot"></div>
+          <div class="dot pending-dot"></div>
+        </div>
+    
+        <div class="timeline">
+          <div class="step completed">
+            <img src="https://img.icons8.com/ios-filled/100/document--v1.png" alt="Formulario">
+            <p>Formulario Completado</p>
+          </div>
+          <div class="step active">
+            <img src="https://img.icons8.com/ios-filled/100/checked.png" alt="Confirmación">
+            <p>Confirmación de Datos</p>
+          </div>
+          <div class="step pending">
+            <img src="https://img.icons8.com/ios-filled/100/conference-call.png" alt="Entrevista">
+            <p>Entrevista Virtual</p>
+          </div>
+          <div class="step pending">
+            <img src="https://img.icons8.com/ios-filled/100/dog-house.png" alt="Visita">
+            <p>Visita al Refugio</p>
+          </div>
+          <div class="step pending">
+            <img src="https://img.icons8.com/ios-filled/100/approval.png" alt="Aprobación">
+            <p>Aprobación del Proceso</p>
+          </div>
+          <div class="step pending">
+            <img src="https://img.icons8.com/ios-filled/100/delivery.png" alt="Entrega">
+            <p>Entrega de la Mascota</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="padre">
+
+    
+
+    <div class="acciones">
+        <h3>📅 Agendar Entrevista Virtual</h3>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha">
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora">
+
+        <label for="enlace">Enlace Meet:</label>
+        <input type="text" id="enlace" placeholder="https://meet.google.com/...">
+
+        <div>
+        <button onclick="window.open('https://meet.google.com/new', '_blank')">➕ Generar enlace Meet</button>
+        <button onclick="agendarCalendar()">📆 Agendar en Google Calendar</button>
+        </div>
+    </div>
+
+    <script>
+        function agendarCalendar() {
+        const fecha = document.getElementById('fecha').value.replace(/-/g, '');
+        const hora = document.getElementById('hora').value.replace(':', '') + '00';
+        const enlace = encodeURIComponent(document.getElementById('enlace').value);
+        const titulo = encodeURIComponent('Entrevista de Adopción - AdoptMe');
+        const detalle = encodeURIComponent('Videollamada con adoptante');
+        const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${titulo}&dates=${fecha}T${hora}Z/${fecha}T${hora}Z&details=${detalle}&location=${enlace}`;
+        window.open(url, '_blank');
+        }
+    </script>
+    </div>
+
+</body>
+</html>
