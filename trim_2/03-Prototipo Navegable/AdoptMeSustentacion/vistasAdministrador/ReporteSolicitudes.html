@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Mascotas | AdoptMe</title>
+  <link rel="stylesheet" href="/css/reportem.css">
+  <link rel="stylesheet" href="/css/entregables.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/img/IconoMorado.png" type="image/png">
+
+
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+        <img src="/img/logo.png" alt="AdoptMe Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/vistasAdministrador/indexAdministrador.html">Inicio</a></li>
+            <li><a href="/vistasAdministrador/gestionAdministrador.html">Gestion</a></li>
+        </ul>
+    </nav>
+    <div>
+        <button class="btn" onclick="abrirModal('loginModal')"><ion-icon name="person"></ion-icon></button>
+    </div>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2 id="tituloEntregable">gestionar</h2>
+            <ul>
+                <li><a href="/vistasAdministrador/gestionUsuarios.html"><i class="fas fa-home"></i>Gestion Usuarios</a></li>
+                <li><a href="/vistasAdministrador/gestionMascotas.html"><i class="fas fa-user"></i>Gestion Mascotas</a></li>
+                <li><a href="/vistasAdministrador/gestionSolicitudes.html"><i class="fas fa-address-card"></i>Gestion Solicitudes</a></li>
+                <li><a href="/vistasAdministrador/ReporteMascotas.html"><i class="fas fa-user"></i>Reportes Mascotas</a></li>
+                <li><a href="/vistasAdministrador/ReporteSolicitudes.html"><i class="fas fa-user"></i>Gestion Solicitudes</a></li>
+                <li><a href="/vistasAdministrador/ReporteAdopciones.html"><i class="fas fa-user"></i>Gestion Adopciones</a></li>
+            </ul> 
+        </div>   
+    </div>
+  <main class="main-layout">
+    
+
+    <section class="content">
+      <h2>Reporte de solicitudes</h2>
+      <div class="chart-container">
+        <canvas id="barChart"></canvas>
+        <canvas id="pieChart"></canvas>
+      </div>
+      
+
+      <div class="filters">
+        <label>Filtrar por:</label>
+        <select><option>Fecha</option></select>
+        <select><option>Estado</option></select>
+        <select><option>Tipo</option></select>
+        <button class="apply-btn">Aplicar</button>
+      </div>
+
+      <div class="export">
+        <label>Exportar como:</label>
+        <button class="excel-btn">Excel</button>
+        <button class="pdf-btn">PDF</button>
+        <button class="advanced-btn">Opciones avanzadas</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="charts.js"></script>
+  <script>
+    barCtx = document.getElementById('barChart').getContext('2d');
+    new Chart(barCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+      datasets: [{
+        label: 'Solicitudes este mes',
+        data: [28, 15, 44, 35, 24],
+        backgroundColor: '#a94eff',
+        borderRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Solicitudes por mes',
+          color: '#333',
+          font: {
+            size: 18
+          }
+        }
+      }
+    }
+  });
+  
+  // Gráfico de pastel: estado de las mascotas
+  const pieCtx = document.getElementById('pieChart').getContext('2d');
+  new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+      labels: ['Aceptadas', 'En espera', 'Rechazadas'],
+      datasets: [{
+        label: 'Estado de solicitudes',
+        data: [14, 8, 2],
+        backgroundColor: ['#00b894', '#ffeaa7', '#d63031']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Estado de las solicitudes',
+          color: '#333',
+          font: {
+            size: 18
+          }
+        }
+      }
+    }
+  });
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

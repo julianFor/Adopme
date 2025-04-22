@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revisión de Solicitud de Adopción</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/entregables.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/IconoMorado.png" type="image/png">
+
+  <style>
+    .padre {
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    h2 {
+      color: #B75DFC;
+      margin-bottom: 5px;
+    }
+    .seccion {
+      margin-top: 25px;
+    }
+    .seccion h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .campo {
+      margin: 6px 0;
+    }
+    .campo strong {
+      color: #444;
+    }
+    .documentos, .condiciones {
+      margin-top: 15px;
+    }
+    .condiciones ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .condiciones li::before {
+      content: '\2714\0020';
+      color: green;
+    }
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .botones button {
+      padding: 12px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+    .aprobar {
+      background-color: #63D471;
+    }
+    .rechazar {
+      background-color: #FC636B;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/img/logo.png" alt="AdoptMe Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/vistaAdminitradorFundacion/indexAdministradorFundacion.html">Inicio</a></li>
+            <li><a href="/vistaAdminitradorFundacion/gestionAdministradorFundacion.html">Gestion</a></li>
+        </ul>
+    </nav>
+    <div>
+        <button class="btn" onclick="abrirModal('loginModal')"><ion-icon name="person"></ion-icon></button>
+    </div>
+</header>
+    <div class="wrapper">
+      <div class="sidebar">
+          <h2 id="tituloEntregable">gestionar</h2>
+          <ul>
+              <li><a href="/vistaAdminitradorFundacion/gestionMascotasFundacion.html"><i class="fas fa-user"></i>Gestion Mascotas</a></li>
+              <li><a href="/vistaAdminitradorFundacion/gestionSolicitudesFundacion.html"><i class="fas fa-address-card"></i>Gestion Solicitudes</a></li>
+              <li><a href="#"><i class="fas fa-user"></i>Seguimientos Adopcion</a></li>
+          </ul> 
+      </div>   
+  </div>
+    <div class="padre">
+
+            <div class="container">
+            <h2>🐾 Revisión de Solicitud de Adopción</h2>
+            <p><strong>Fecha de envío:</strong> 08/04/2025</p>
+        
+            <div class="seccion">
+                <h3>📌 Información Personal</h3>
+                <div class="campo"><strong>Nombre:</strong> Juan Pérez</div>
+                <div class="campo"><strong>Cédula:</strong> 123456789</div>
+                <div class="campo"><strong>Fecha de nacimiento:</strong> 10/01/1995</div>
+                <div class="campo"><strong>Dirección:</strong> Calle 123 #45-67</div>
+                <div class="campo"><strong>Barrio/Localidad:</strong> Suba</div>
+                <div class="campo"><strong>Ciudad:</strong> Bogotá</div>
+                <div class="campo"><strong>Teléfono:</strong> 3204567890</div>
+                <div class="campo"><strong>Correo:</strong> juanperez@mail.com</div>
+            </div>
+        
+            <div class="seccion">
+                <h3>🏠 Información sobre el Hogar</h3>
+                <div class="campo"><strong>Tipo de vivienda:</strong> Casa</div>
+                <div class="campo"><strong>Propiedad:</strong> Propia</div>
+                <div class="campo"><strong>Todos están de acuerdo con la adopción:</strong> Sí</div>
+                <div class="campo"><strong>Niños en casa:</strong> Sí</div>
+                <div class="campo"><strong>Otras mascotas:</strong> No</div>
+                <div class="campo"><strong>Alergias en casa:</strong> No</div>
+            </div>
+        
+            <div class="seccion">
+                <h3>📄 Información sobre la Adopción</h3>
+                <div class="campo"><strong>¿Por qué deseas adoptar?:</strong> Me encantan los animales y quiero dar hogar a uno necesitado.</div>
+                <div class="campo"><strong>¿Dónde vivirá la mascota?:</strong> Dentro de la casa</div>
+                <div class="campo"><strong>¿Y si presenta problemas?:</strong> Consultaré a un veterinario o etólogo.</div>
+                <div class="campo"><strong>Tiempo solo diariamente:</strong> 4 horas</div>
+                <div class="campo"><strong>Responsable principal:</strong> Yo mismo</div>
+                <div class="campo"><strong>¿Y si te mudas?:</strong> Buscaré alternativas para llevarla conmigo o reubicarla responsablemente.</div>
+            </div>
+        
+            <div class="seccion">
+                <h3>🔒 Compromiso y Responsabilidad</h3>
+                <div class="campo">Recibir visita virtual: Sí</div>
+                <div class="campo">Compromiso con cuidados: Sí</div>
+                <div class="campo">Firmar contrato: Sí</div>
+            </div>
+        
+            <div class="documentos">
+                <h3>📂 Documentos Adjuntos</h3>
+                <div class="campo">Documento de identidad: <a href="#">ver_doc.pdf</a></div>
+                <div class="campo">Prueba de residencia: <a href="#">recibo_luz.pdf</a></div>
+            </div>
+        
+            <div class="condiciones">
+                <h3>🔢 Confirmaciones y Condiciones</h3>
+                <ul>
+                <li>Acepta condiciones generales</li>
+                <li>No solicita pagos por adopción</li>
+                <li>Dispuesto a videollamada o visita</li>
+                <li>Confirmación final aceptada</li>
+                </ul>
+            </div>
+        
+            <div class="botones">
+              <a href="/vistaAdminitradorFundacion/entrevistaVirtual.html"><button class="aprobar">✅ Aceptar y continuar proceso</button></a>
+              <a href="/vistaAdminitradorFundacion/gestionSolicitudesFundacion.html"><button class="rechazar">❌ Rechazar solicitud</button></a>                
+            </div>
+            </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
